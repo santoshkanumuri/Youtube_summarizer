@@ -1,0 +1,10 @@
+.venv/
+comments/
+completed/
+downloads/
+input_data/
+output_files/
+videos/
+.env
+__pycache__/
+.idea/
