@@ -8,8 +8,6 @@ from summarizer import analyze_video,analyze_folder
 
 
 def keyword_search(keyword,time_limit,video_limit):
-    # api_key = '***REMOVED***'
-    # api_key="***REMOVED***"
     api_key=""
     st.write(video_limit)
     save_video_links_to_excel(api_key, keyword, int(video_limit))
