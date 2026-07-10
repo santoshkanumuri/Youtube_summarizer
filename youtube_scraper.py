@@ -112,7 +112,9 @@ def save_summary_to_excel(video_details, filename='youtube_summary.xlsx'):
 
 
 # Example usage
-api_key = '***REMOVED***'
+api_key = os.getenv('YOUTUBE_API_KEY') or os.getenv('GOOGLE_API_KEY')
+if not api_key:
+    raise RuntimeError("Set YOUTUBE_API_KEY or GOOGLE_API_KEY")
 keyword = 'menopause'
 video_details = get_youtube_video_details(api_key, keyword)
 save_summary_to_excel(video_details)

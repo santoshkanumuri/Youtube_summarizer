@@ -7,7 +7,11 @@ import dotenv
 
 
 # Configure the API key
-genai.configure(api_key="***REMOVED***")
+dotenv.load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+if not api_key:
+    raise RuntimeError("Set GEMINI_API_KEY or GOOGLE_API_KEY")
+genai.configure(api_key=api_key)
 
 
 def upload_to_gemini(path, mime_type=None):

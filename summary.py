@@ -167,7 +167,7 @@ def update_excel_with_video_data(excel_file):
 
 if __name__ == '__main__':
     # Example usage
-    # api_key = '***REMOVED***'
+    # api_key = os.getenv('YOUTUBE_API_KEY') or os.getenv('GOOGLE_API_KEY')
     # save_video_links_to_excel(video_links)
     # downloader('youtube_video_links.xlsx')
     update_excel_with_video_data('youtube_video_links.xlsx')
